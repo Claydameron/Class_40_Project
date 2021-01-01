@@ -11,7 +11,7 @@ var fruits;
 var fruitGroup;
 var fruit1_img, fruit2_img, fruit3_img, fruit4_img, fruit5_img;
 var player_img;
-
+// create the variables for the score and displaying scores. and intialize with zero
 
 function preload(){
   back_img = loadImage("images/jungle.jpg");
@@ -29,7 +29,6 @@ function setup() {
   game = new Game();
   game.getState();
   game.start();
-  
 }
 
 function draw() {
@@ -38,12 +37,17 @@ function draw() {
    if (playerCount === 2) {
      game.update(1);
    }
+
+
    if (gameState === 1) {
      clear(); 
      game.play();
    }
+
    if (gameState === 2) {
     
      game.end();
+
+    
    }
 }

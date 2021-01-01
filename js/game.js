@@ -56,19 +56,18 @@ class Game{
                      players[index - 1].y = y;
                        
                      if(index === player.index){
-                         
-                         fill("black");
-                         textSize(25);
-                         text(allPlayers[plr].name ,x-25,y+25);
-
-                         
+                        fill("black");
+                        textSize(25);
+                        text(allPlayers[plr].name ,x-25,y+25);
                      }
-                    
-                     
-                 
+                     fill(255)
+                     text("Player 1: " + allPlayers.player1.score , 50,25);
+                     text("Player 2: " + allPlayers.player2.score , 50,50);
                  }
                 
-                
+                /*var score = player.getPlayerScore1();
+                player.getPlayerScore2();
+                text(score, 20,20);*/
                  
 
                 if (keyIsDown(RIGHT_ARROW) && player.index !== null) {
@@ -101,15 +100,14 @@ class Game{
                  }
                  
                   if (player.index !== null) {
-                     //fill code here, to destroy the objects.
+                    for(var i = 0; i < fruitGroup.length; i++ ) {
+                        if(fruitGroup.get(i).isTouching(players)) {
+                           fruitGroup.get(i).destroy();
+                           player.score = player.score + 1;
+                           player.update();
+                        }
                   }
-                
-
-         
-         
-        
-         
-
+                }
     }
 
     end(){

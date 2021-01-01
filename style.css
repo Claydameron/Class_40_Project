@@ -1,11 +1,13 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: Avenir;
 }
+
 canvas {
   display: block;
-  border: 5px solid maroon;
+  border: 5px solid rgb(25, 141, 141);
   margin-right:auto;
   margin-left:auto;
-  margin-top: 100px;
+  margin-top: 25px;
 }
